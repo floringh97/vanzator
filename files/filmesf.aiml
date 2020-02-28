@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>*</pattern>
+        <template>nu stiu sa raspund</template>
+    </category>
+	<category>
+	    <pattern>salut</pattern>
+	    <template>salut</template>
+	</category>
+	<category>
+	    <pattern>cum te numesti</pattern>
+	    <template>numele meu este <bot name="nume"/> si ma ocup de recomandari filme SF!</template>
+	</category>
+	<category>
+	    <pattern>vreau *</pattern>
+	    <template>Am inteles, <set name="film"><star/></set></template>
+	</category>
+	<category>
+	    <pattern>ce vreau</pattern>
+	    <template>
+	        <think>
+	            <set var="valoare"><get name="produs"/></set>
+	        </think>
+	        <condition var="valoare">
+	            <li value="unknown">nu mi-ati spus ce doriti</li>
+	            <li>doriti <get name="produs">.</get></li>
+	        </condition>
+	    </template>
+	</category>
+</aiml>
